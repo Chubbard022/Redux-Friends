@@ -1,7 +1,7 @@
 import React from 'react';
 
 const initialState = {
-    
+    friends: [],
 }
 
 const reducer = (state=initialState, action) =>{
