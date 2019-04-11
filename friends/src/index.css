@@ -1,14 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Prompt|Roboto');
+
+html,
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding-bottom: 36px;
+}
+
+.error {
+  margin: 0 auto;
+  margin-top: 16px;
+  padding: 16px;
+  width: 300px;
+  border: 1px solid #ff00002e;
+  border-radius: 4px;
+  background: #ff000036;
+  color: red;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 36px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+li {
+  list-style: none;
+  margin-right: 6px;
+  color: #204963;
+}
+
+a {
+  text-decoration: none;
+  padding: 6px;
+  color: #204963;
 }
