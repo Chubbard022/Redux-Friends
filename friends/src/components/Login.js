@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-
+import { LOGIN_START,LOGIN_SUCCESS,LOGIN_FAILURE} from "../actions";
 
 class Login extends React.Component{
     state={
@@ -14,7 +13,7 @@ class Login extends React.Component{
 
     render(){
         return(
-            <form onSubmit={this.login}>
+            <form className="form" onSubmit={this.login}>
                 <input 
                     type="text"
                     name='username'
@@ -32,4 +31,4 @@ class Login extends React.Component{
         )
     }
 }
-export default Login;
+export default connect(null,{ })(Login);
