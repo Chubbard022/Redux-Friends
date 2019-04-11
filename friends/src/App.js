@@ -1,12 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-class App extends Component {
+import Login from './components/Login';
+
+
+class App extends React.Component {
   render() {
     return (
+      <Router>
       <div className="App">
-      <p>render things here</p>
+        <ul>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/protected">Protected Page</Link>
+          </li>
+        </ul>
+        <Route path="/login" component={Login} />
       </div>
+    </Router>
     );
   }
 }

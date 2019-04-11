@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Loader from 'react-loader-spinner';
+
 
 
 class Login extends React.Component{
@@ -18,7 +18,7 @@ class Login extends React.Component{
                 <input 
                     type="text"
                     name='username'
-                    value="this.state.username"
+                    value={this.state.username}
                     onChange={this.handleChange}
                 />
                 <input 
