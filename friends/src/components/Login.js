@@ -4,12 +4,26 @@ import { LOGIN_START,LOGIN_SUCCESS,LOGIN_FAILURE} from "../actions";
 
 class Login extends React.Component{
     state={
-        credentials:{
+        credentials: {
             username: '',
             password: ''
-        }
+          }
     }
 
+    handleChange = event => {
+        this.setState({
+            credentials: {
+            ...this.state.credentials,
+            [event.target.name]: event.target.value
+        }});
+    };
+    login = event =>{
+        event.preventDefault();
+
+        this.props.login(this.state.credentials).then(()=>{
+            this.props.history.push('/protected')
+        })
+    }
 
     render(){
         return(

@@ -21,18 +21,40 @@ const initialState = {
 const reducer = (state=initialState, action) =>{
     switch(action.type){
         case LOGIN_START:
-        return{
-            ...state,
-            deletingFriend: false,
-            fetchingFriends: false,
-            loggingIn: true,
-            savingFriends: false,
-            updatingFriend: false,
-            error: null
-        }
-        case LOGIN_SUCCESS:{
-        return{}
-        }
+            return{
+                ...state,
+                error: '',
+                loggingIn: true,
+            }
+        case LOGIN_SUCCESS:
+            return{
+                ...state,
+                error: '',
+                loggingIn: false
+            }
+        case LOGIN_FAILURE:
+            return{
+                ...state,
+                loggingIn: false,
+                error: action.payload.data.error
+            }
+        case FETCH_DATA_START:
+            return{
+                ...state,
+                error: '',
+                fetchingFriends: true,
+            }
+        case FETCH_DATA_SUCCESS:
+            return{
+                ...state,
+                error: '',
+                fetchingFriends: false,
+            }
+        case FETCH_DATA_FAILURE: 
+            return{
+                ...state,
+                error:action.payload.data.error
+            }
         default:
       return state;
     }
