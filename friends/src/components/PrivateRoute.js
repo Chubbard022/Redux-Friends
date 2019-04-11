@@ -8,7 +8,7 @@ const PrivateRoute = ({ component: Component, errorStatusCode, ...rest }) => {
       <Route
         {...rest}
         render={props => {
-          if (localStorage.getItem('token') && errorStatusCode !== 403) {
+          if (localStorage.getItem('token')) {
             return <Component {...props} />;
           } else {
             // redirect to login
@@ -18,13 +18,7 @@ const PrivateRoute = ({ component: Component, errorStatusCode, ...rest }) => {
       />
     );
   };
-  
-  const mapStateToProps = ({ errorStatusCode }) => ({
-    errorStatusCode
-  });
-  
-export default connect(
-    mapStateToProps,
-    {}
-  )(PrivateRoute);
+
+
+  export default PrivateRoute;
    

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { LOGIN_START,LOGIN_SUCCESS,LOGIN_FAILURE} from "../actions";
+import { login } from '../actions';
+
 
 class Login extends React.Component{
     state={
@@ -45,4 +47,6 @@ class Login extends React.Component{
         )
     }
 }
-export default connect(null,{ })(Login);
+const mapStateToProps = ({ loggingIn }) => ({loggingIn});
+export default connect(mapStateToProps,{ login })(Login);
+  
